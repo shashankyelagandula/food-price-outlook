@@ -48,30 +48,6 @@ These likely represent different sheets or versions of the CPI forecast data.
 
 The R script `ProjectAssignment#4.R` is used for data analysis and visualization. It loads libraries such as `ggplot2`, `dplyr`, `tidyverse`, and `readxl`. The script demonstrates creating data frames and generating visualizations like histograms and line plots.
 
-### Example Code Snippet:
-
-```r
-# Load necessary libraries
-library(ggplot2)
-library(dplyr)
-library(tidyverse)
-library(readxl)
-
-all_food <- data.frame(
-  "Period" = c("Month-to-month", "Year-over-year", "Annual", "Annual", "Annual", "20-year historical average"),
-  "Change" = c(0.1, 8.5, 3.4, 3.9, 9.9, 2.8),
-  "Year" = c(NA, 2023, 2020, 2021, 2022, NA)
-)
-
-hist(all_food$Change, main = "Histogram of Annual Changes in CPI for All Food Items")
-
-ggplot(all_food, aes(x = Year, y = Change, group = 1)) +
-  geom_line(aes(linetype = Period)) +
-  scale_linetype_manual(values = c("Month-to-month" = "solid", "Year-over-year" = "solid", "Annual" = "solid", "20-year historical average" = "dashed")) +
-  geom_point() +
-  labs(title = "Annual Changes in CPI for All Food Items", x = "Year", y = "Percent Change") +
-  theme_minimal()
-
 
 
 ## ❓ Research Questions
